@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import "./EditRecipe.css";
 
 export default function EditRecipe() {
   const [title, setTitle] = useState("");
@@ -79,45 +80,75 @@ export default function EditRecipe() {
 
   return (
     <div className="EditRecipe">
-      <h1>Edit Recipe</h1>
+      <h3>Edit Recipe</h3>
       {loading ? "<h1>Loading...</h1>" : ""}
       <form className="UpdateForm" onSubmit={handleSubmit}>
-        <label htmlFor="title">Recipe Title:*</label>
-        <input type="text" onChange={(e) => setTitle(e.target.value)} id="title" value={title} />
+        <div className="title">
+          <label htmlFor="title">Recipe Title:*</label>
+          <input
+            type="text"
+            onChange={(e) => setTitle(e.target.value)}
+            id="title"
+            value={title}
+            required
+          />
+        </div>
 
-        <label htmlFor="description">Recipe Description:</label>
-        <input
-          type="text"
-          onChange={(e) => setDescription(e.target.value)}
-          id="description"
-          value={description}
-        />
+        <div className="description">
+          <label htmlFor="description">Recipe Description:</label>
+          <input
+            type="text"
+            onChange={(e) => setDescription(e.target.value)}
+            id="description"
+            value={description}
+          />
+        </div>
 
-        <label htmlFor="image">Recipe Image Link:*</label>
-        <input type="text" onChange={(e) => setImg(e.target.value)} id="image" value={img} />
+        <div className="image">
+          <label htmlFor="image">Recipe Image Link:*</label>
+          <input
+            type="text"
+            onChange={(e) => setImg(e.target.value)}
+            id="image"
+            value={img}
+            required
+          />
+        </div>
 
-        <label htmlFor="detail">Recipe Detail:</label>
-        <input type="text" onChange={(e) => setDetail(e.target.value)} id="detail" value={detail} />
+        <div className="detail">
+          <label htmlFor="detail">Recipe Detail:</label>
+          <input
+            type="text"
+            onChange={(e) => setDetail(e.target.value)}
+            id="detail"
+            value={detail}
+          />
+        </div>
 
-        <label htmlFor="ingredients">Recipe Ingredients:*</label>
-        <textarea
-          onChange={(e) => setIngrendients(e.target.value)}
-          id="ingredients"
-          value={ingredients}
-          rows={6}
-          cols={40}
-          name="ingredients"
-        />
+        <div className="ingredients">
+          <label htmlFor="ingredients">Recipe Ingredients:*</label>
+          <textarea
+            onChange={(e) => setIngrendients(e.target.value)}
+            id="ingredients"
+            value={ingredients}
+            rows={6}
+            cols={40}
+            name="ingredients"
+            required
+          />
+        </div>
 
-        <label htmlFor="directions">Recipe Directions:</label>
-        <textarea
-          onChange={(e) => setDirections(e.target.value)}
-          value={directions}
-          rows={6}
-          cols={40}
-          id="directions"
-        />
-        <button>Update Recipe</button>
+        <div className="directions">
+          <label htmlFor="directions">Recipe Directions:</label>
+          <textarea
+            onChange={(e) => setDirections(e.target.value)}
+            value={directions}
+            rows={6}
+            cols={40}
+            id="directions"
+          />
+        </div>
+        <button className="UpdateRecipeBtn">Update Recipe</button>
       </form>
     </div>
   );

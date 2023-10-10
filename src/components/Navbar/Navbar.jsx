@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-import SearchIcon from "@mui/icons-material/Search";
-import SearchRecipe from "../../pages/SearchRecipe";
 
 export default function Navbar() {
   return (
     <header>
       <div className="Navbar">
-        <div className="CreateRecipe">
+        <div className="CreateRecipeLink">
           <Link to={`/recipes/create`}>Create Recipe</Link>
         </div>
 

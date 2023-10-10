@@ -5,7 +5,7 @@ import CreateRecipe from "./pages/CreateRecipe";
 import ShowRecipe from "./pages/ShowRecipe";
 import EditRecipe from "./pages/EditRecipe";
 import DeleteRecipe from "./pages/DeleteRecipe";
-import Sidebar from "./components/Sidebar/Sidebar";
+
 import "./App.css";
 import SearchRecipe from "./pages/SearchRecipe";
 
