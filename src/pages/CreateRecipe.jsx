@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./CreateRecipe.css";
 import "nice-forms.css";
+import { serverURL } from "../config";
 
 export default function CreateRecipe() {
   const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ export default function CreateRecipe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    ingredients = ingredients.split(",");
+    ingredients = String(ingredients).split(",");
     // setIngrendients(ingredients.split(","));
 
     // console.log(ing);
@@ -31,7 +32,7 @@ export default function CreateRecipe() {
     };
     setLoading(true);
     axios
-      .post(`http://localhost:4000/api/recipes/`, recipeData)
+      .post(`${serverURL}/api/recipes/`, recipeData)
       .then((response) => {
         // console.log(response.statusText === "OK" ? "OK" : "NOT OK");
         if (response.statusText === "OK") {

@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EditRecipe.css";
+import { serverURL } from "../config";
 
 export default function EditRecipe() {
   const [title, setTitle] = useState("");
@@ -17,7 +18,7 @@ export default function EditRecipe() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:4000/api/recipes/${id}`)
+      .get(`${serverURL}/api/recipes/${id}`)
       .then((response) => {
         setTitle(response.data.title);
         setDescription(response.data.description);
@@ -36,7 +37,7 @@ export default function EditRecipe() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // setIngrendients(Array.split(","));
-    const ingredientArray = ingredients.split(",");
+    const ingredientArray = String(ingredients).split(",");
 
     // setIngrendients(ingredients.split(","));
 
@@ -51,7 +52,7 @@ export default function EditRecipe() {
     };
     setLoading(true);
     axios
-      .put(`http://localhost:4000/api/recipes/${id}`, recipeData)
+      .put(`${serverURL}/api/recipes/${id}`, recipeData)
       .then((response) => {
         console
           .log

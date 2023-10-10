@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./ShowRecipe.css";
+import { serverURL } from "../config";
 
 export default function ShowRecipe() {
   const [recipe, setRecipe] = useState({});
@@ -11,7 +12,7 @@ export default function ShowRecipe() {
   useEffect(() => {
     setLoading(true);
     axios
-      .get(`http://localhost:4000/api/recipes/${id}`)
+      .get(`${serverURL}/api/recipes/${id}`)
       .then((response) => {
         // console.log("Response Data:", response.data);
         setRecipe(response.data); // Update the recipe state with data.

@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
+import { serverURL } from "../config";
 
 export default function DeleteRecipe() {
   const { id } = useParams();
@@ -10,7 +11,7 @@ export default function DeleteRecipe() {
   const handleDelete = () => {
     setLoading(true);
     axios
-      .delete(`http://localhost:4000/api/recipes/${id}`)
+      .delete(`${serverURL}/api/recipes/${id}`)
       .then((response) => {
         setLoading(false);
         console.log("book deleted successfully");

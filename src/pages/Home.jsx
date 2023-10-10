@@ -3,6 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 
 import "./Home.css";
+import { serverURL } from "../config";
 
 export default function Home() {
   const [recipes, setRecipes] = useState([]);
@@ -11,7 +12,7 @@ export default function Home() {
   useEffect(() => {
     setLeading(true);
     axios
-      .get("http://localhost:4000/api/recipes")
+      .get(`${serverURL}/api/recipes`)
       .then((data) => {
         console.log(data.data);
         setRecipes(data?.data.recipes);
