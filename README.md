@@ -38,8 +38,12 @@ Front-End :
 
 ## Sketches
 
-Home : ![Alt text](./public/Home.png)
-Show: ![Alt text](./public/show-page.png)
+Home : ![Alt text](./public/Home.png/200x200)
+Show: ![Alt text](./public/show-page.png/200x200)
+
+## UI
+
+Application : ![Alt text](./public/UI.png/200x200)
 
 ## Description
 
