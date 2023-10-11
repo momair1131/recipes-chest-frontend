@@ -12,7 +12,7 @@ export default function Footer() {
         </div>
         <div class="FooterContent">
           <div className="copyright">
-            <p>&copy; {new Date().getFullYear()} Recipe Chest. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Recipes Chest. All rights reserved.</p>
           </div>
         </div>
       </footer>
