@@ -68,6 +68,7 @@
   transition: background-color 0.3s;
   align-self: center;
   width: fit-content;
+  margin-bottom: 10px;
 }
 
 .CreateRecipe .AddRecipeBtn:hover {
