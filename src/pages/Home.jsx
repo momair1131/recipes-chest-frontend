@@ -26,11 +26,9 @@ export default function Home() {
 
   return (
     <div className="Home">
-      {/* <h3>All Recipes</h3> */}
+      {loading ? <h1>Loading...</h1> : ""}
 
       <ul>
-        {loading ? <h1 style={{ color: "white" }}>Loading...</h1> : ""}
-
         {recipes.map((recipe) => {
           return (
             <Link to={`/recipes/details/${recipe._id}`}>
@@ -44,8 +42,6 @@ export default function Home() {
                 )}
                 <li className="RecipeTitle">{recipe.title}</li>
 
-                {/* {recipe.description ? <li>{recipe.description}</li> : ""} */}
-                {/* <Link to={`/recipes/details/${recipe._id}`}>Show Recipe</Link> */}
                 <div className="ModifyRecipe">
                   <Link to={`/recipes/edit/${recipe._id} `} className="material-symbols-outlined">
                     Edit

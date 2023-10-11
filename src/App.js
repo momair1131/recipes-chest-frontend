@@ -8,16 +8,14 @@ import DeleteRecipe from "./pages/DeleteRecipe";
 
 import "./App.css";
 import SearchRecipe from "./pages/SearchRecipe";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
     <div className="App">
       <Navbar />
 
-      {/* <Sidebar /> */}
       <div className="pages">
-        {/* <Sidebar /> */}
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/recipes/create" element={<CreateRecipe />} />
@@ -27,6 +25,7 @@ function App() {
           <Route path="/recipes/search/" element={<SearchRecipe />} />
         </Routes>
       </div>
+      <Footer />
     </div>
   );
 }

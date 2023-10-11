@@ -36,10 +36,7 @@ export default function EditRecipe() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // setIngrendients(Array.split(","));
     const ingredientArray = String(ingredients).split(",");
-
-    // setIngrendients(ingredients.split(","));
 
     // console.log(ing);
     const recipeData = {
@@ -54,10 +51,7 @@ export default function EditRecipe() {
     axios
       .put(`${serverURL}/api/recipes/${id}`, recipeData)
       .then((response) => {
-        console
-          .log
-          // response.statusText === "OK" ? "Recipe Updated Successfully" : "There is an error"
-          ();
+        console.log();
         if (response.statusText === "OK") {
           console.log("Recipe Updated Successfully");
           console.log(response);
@@ -82,7 +76,7 @@ export default function EditRecipe() {
   return (
     <div className="EditRecipe">
       <h3>Edit Recipe</h3>
-      {loading ? "<h1>Loading...</h1>" : ""}
+      {loading ? <h1>Loading...</h1> : ""}
       <form className="UpdateForm" onSubmit={handleSubmit}>
         <div className="title">
           <label htmlFor="title">Recipe Title:*</label>

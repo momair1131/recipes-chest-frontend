@@ -15,14 +15,14 @@ export default function ShowRecipe() {
       .get(`${serverURL}/api/recipes/${id}`)
       .then((response) => {
         // console.log("Response Data:", response.data);
-        setRecipe(response.data); // Update the recipe state with data.
-        setLoading(false); // Set loading state to false when data is fetched.
+        setRecipe(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error("Error:", error);
-        setLoading(false); // Set loading state to false on error.
+        setLoading(false);
       });
-  }, [id]); // Include 'id' in the dependency array to re-fetch when the 'id' changes.
+  }, [id]);
 
   const formatDate = (dateString) => {
     const date = {

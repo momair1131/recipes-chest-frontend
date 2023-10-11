@@ -1,0 +1,49 @@
+.DeleteRecipe {
+  width: 50%;
+  height: 200px;
+  display: flex;
+  margin: 5% auto;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(130, 0, 0, 0.5);
+
+  box-sizing: border-box;
+}
+
+.DeleteContainer {
+  width: 100%;
+  height: 100%;
+  /* border: 1px solid; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.DeleteContainer h3 {
+  width: 100%;
+  margin-top: 20px;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #820000;
+}
+
+.DeleteContainer button {
+  background-color: #820000;
+  margin: 5px;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 18px;
+  padding: 12px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  align-self: center;
+  width: fit-content;
+}
+.DeleteContainer .CancelBtn {
+  background-color: #4e6c50;
+}

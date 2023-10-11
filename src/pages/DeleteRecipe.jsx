@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { serverURL } from "../config";
+import "./DeleteRecipe.css";
 
 export default function DeleteRecipe() {
   const { id } = useParams();
@@ -30,11 +31,15 @@ export default function DeleteRecipe() {
   return (
     <div className="DeleteRecipe">
       {loading ? <h1>Loading...</h1> : ""}
-      <h3>Are you sure you want to delete this recipe?</h3>
-      <button className="DeleteBtn" onClick={handleDelete}>
-        Yes, Delete it
-      </button>
-      <button onClick={cancelDelete}>No, Don't Delete it </button>
+      <div className="DeleteContainer">
+        <h3>Are you sure you want to delete this recipe?</h3>
+        <button className="DeleteBtn" onClick={handleDelete}>
+          Yes, Delete it
+        </button>
+        <button onClick={cancelDelete} className="CancelBtn">
+          No, Don't Delete it{" "}
+        </button>
+      </div>
     </div>
   );
 }
